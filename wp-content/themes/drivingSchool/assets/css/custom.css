@@ -1,0 +1,30 @@
+.pt-110{
+	padding-top: 110px;
+}
+.gallery-text-box{
+	border: 1px solid ghostwhite;
+    background: ghostwhite;
+    text-align: center;
+    padding-top: 14px;
+}
+.pt-20{
+	padding-top: 20px;
+}
+.testimonial-box{
+	border: 1px solid beige;
+    padding: 13px;
+    height: 370px;
+}
+.process-image{
+	text-align: center;
+    padding-top: 33px;
+    padding-bottom: 33px;
+}
+.school-time p{
+    color: #fff;
+    font-size: 18px;
+    margin-top: -14px;
+}
+.pt-55{
+    padding-top: 55px;
+}
