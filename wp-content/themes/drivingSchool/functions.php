@@ -193,4 +193,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+/**
+ * Implement the Custom Post Types.
+ */
+require get_template_directory() . '/cpts/banners.php';
+
+/**
+ * Implement the Custom Meta options from Codestar.
+ */
+require get_template_directory() . '/codestar/banner-options.php';
+
 
