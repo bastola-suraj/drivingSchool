@@ -45,54 +45,42 @@ if(have_posts(  )):
 <section class="fullwidth-section-three">
     <div class="outer-box clearfix">
         <!--Image Column-->
-        <div class="image-column" style="background-image:url(images/resource/fullwith-3.jpg);">
+        <div class="image-column" style="background-image:url(<?php echo $about_us_options['services_image']['url'] ?>);">
             <div class="image-box">
-                <img src="images/resource/fullwith-3.jpg" alt="" />
+                <img src="<?php echo $about_us_options['services_image']['url'] ?>" alt="" />
             </div>
         </div>
         <!--Services Column-->
         <div class="services-column">
             <div class="inner">
                 <div class="testimonial-carousel owl-carousel owl-theme">
-                
-                    <!--Testimonial Slide-->
-                    <div class="testimonial-slide">
-
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-people-1"></span>
+                <?php
+                $our_services = $about_us_options['services_repeater'];
+                $chunkArrays = array_chunk($our_services,3);
+                foreach ($chunkArrays as $chunkArray){
+                    ?>
+                <!--Testimonial Slide-->
+                <div class="testimonial-slide">
+                    <?php
+                    foreach($chunkArray as $single){
+                        ?>
+                            <!--Testimonial Block Two-->
+                            <div class="testimonial-block-two">
+                                <div class="testimonial-inner">
+                                    <div class="icon-box">
+                                        <span class="icon <?php echo $single['service_logo'] ?>"></span>
+                                    </div>
+                                    <h3><a href="#"><?php echo $single['service_title']?></a></h3>
+                                    <div class="text"><?php echo $single['service_description']?></div>
                                 </div>
-                                <h3><a href="#">Instructor Training</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
                             </div>
-                        </div>
-
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-gearbox"></span>
-                                </div>
-                                <h3><a href="#">Highway Safety</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-traffic-light-1"></span>
-                                </div>
-                                <h3><a href="#">Traffic Rules </a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-
+                        <?php
+                    }
+                    ?>
                     </div>
-                    
+                    <?php
+                }
+?>
                 </div>
             </div>
         </div>
@@ -102,8 +90,9 @@ if(have_posts(  )):
                 <h3>Application Form</h3>
                 
                 <!--Default Form-->
-                <div class="default-form">
-                    <form method="post">
+                <div class="default-form"><?php
+                    // do_shortcode('[contact-form-7 id="70" title="About Form"]');
+                   ?> <form method="post">
                         <div class="row clearfix">
                         
                             <!--Form Group-->
@@ -171,7 +160,9 @@ if(have_posts(  )):
             </div>
         </div>
     </div>
-</section>
+
+    <!--Form Column-->
+    </section>
 <!--End FullWisth Section Three-->
 <?php
 endwhile;

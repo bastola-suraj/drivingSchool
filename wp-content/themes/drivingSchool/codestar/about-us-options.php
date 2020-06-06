@@ -34,5 +34,37 @@ if( class_exists( 'CSF' ) ) {
               ),
         ),
       ) );
+      CSF::createSection( $prefix, array(
+        'title'  => 'Our Services',
+        'fields' => array(
+            array(
+                'id'=>'services_image',
+                'type'=>'media',
+                'title'=>'Services Image',
+            ),
+            array(
+                'id'=>'services_repeater',
+                'type'=>'repeater',
+                'title'=>'Services',
+                'fields'=>array(
+                    array(
+                        'id'=>'service_title',
+                        'type'=>'text',
+                        'title'=>'Service Title',
+                    ),
+                    array(
+                        'id'=>'service_description',
+                        'type'=>'text',
+                        'title'=>'Service Description',
+                    ),
+                    array(
+                        'id'=>'service_logo',
+                        'type'=>'icon',
+                        'title'=>'Service Logo',
+                    ),
+                )
+              ),
+        ),
+      ) );
     
 }
