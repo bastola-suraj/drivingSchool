@@ -15,7 +15,7 @@ if( class_exists( 'CSF' ) ) {
     'context'            => 'advanced',
     'priority'           => 'default',
     'exclude_post_types' => array(),
-    'page_templates'     => 'cpts/banner-options.php',
+    'page_templates'     => '',
     'post_formats'       => '',
     'show_restore'       => false,
     'enqueue_webfont'    => true,
@@ -54,27 +54,24 @@ if( class_exists( 'CSF' ) ) {
         array(
           'id'=>'banner_readmore_button_url',
           'type'=>'text',
+          'default'=>'#',
           'title'=>'Readmore Button URL',
           'dependency'=>array('banner_readmore_switcher','==','true')
         ),
         array(
-          'id'=>'banner_see_pricing_switcher',
-          'type'=>'switcher',
-          'title'=>'Pricing Switcher'
-        ),
-        array(
-          'id'=>'banner_see_pricing_button_url',
+          'id'=>'banner_see_pricing_button_text',
           'type'=>'text',
           'title'=>'See Pricing Button Text ',
-          'dependency'=>array('banner_see_pricing_switcher','==','true')
+          'dependency'=>array('banner_readmore_switcher','==','true')
         ),
         array(
           'id'=>'banner_see_pricing_button_url',
           'type'=>'text',
+          'default'=>'#',
           'title'=>'See Pricing Button URL',
-          'dependency'=>array('banner_see_pricing_switcher','==','true')
+          'dependency'=>array('banner_readmore_switcher','==','true')
         ),
-      )
+      ),
     ) );
   
   }
