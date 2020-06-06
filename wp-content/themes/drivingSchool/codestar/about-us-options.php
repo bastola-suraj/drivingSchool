@@ -9,21 +9,21 @@ if( class_exists( 'CSF' ) ) {
     //
     // Create a metabox
     CSF::createMetabox( $prefix, array(
-      'title'     => 'Page options',
-      'post_type' => 'page',
-    'data_type'          => 'serialize',
-    'context'            => 'advanced',
-    'priority'           => 'default',
-    'exclude_post_types' => array(),
-    'page_templates'     => 'templates/about_us.php',
-    'post_formats'       => '',
-    'show_restore'       => false,
-    'enqueue_webfont'    => true,
-    'async_webfont'      => false,
-    'output_css'         => true,
-    'theme'              => 'dark',
-    'class'              => '',
-    ) );
+        'title'              => 'Page options',
+        'post_type'          => 'page',
+        'data_type'          => 'serialize',
+        'context'            => 'advanced',
+        'priority'           => 'default',
+        'exclude_post_types' => array(),
+        'page_templates'     => 'templates/about_us.php',
+        'post_formats'       => '',
+        'show_restore'       => false,
+        'enqueue_webfont'    => true,
+        'async_webfont'      => false,
+        'output_css'         => true,
+        'theme'              => 'dark',
+        'class'              => '',
+        ) );
     CSF::createSection( $prefix, array(
         'title'  => 'Options',
         'fields' => array(

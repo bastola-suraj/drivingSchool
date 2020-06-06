@@ -30,7 +30,7 @@ if(have_posts(  )):
             <!--Image Column-->
             <div class="image-column col-md-6 col-sm-12 col-xs-12">
                 <div class="image wow slideInRight pt-55" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <img src="<?php echo $about_us_image; ?>" alt="" /><br><br><br>
+                    <img src="<?php echo $about_us_image; ?>" alt="" /><br><br>
                 </div>
             </div>
         </div>
@@ -57,6 +57,7 @@ if(have_posts(  )):
                 
                     <!--Testimonial Slide-->
                     <div class="testimonial-slide">
+
                         <!--Testimonial Block Two-->
                         <div class="testimonial-block-two">
                             <div class="testimonial-inner">
@@ -67,6 +68,7 @@ if(have_posts(  )):
                                 <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
                             </div>
                         </div>
+
                         <!--Testimonial Block Two-->
                         <div class="testimonial-block-two">
                             <div class="testimonial-inner">
@@ -77,6 +79,7 @@ if(have_posts(  )):
                                 <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
                             </div>
                         </div>
+
                         <!--Testimonial Block Two-->
                         <div class="testimonial-block-two">
                             <div class="testimonial-inner">
@@ -87,74 +90,7 @@ if(have_posts(  )):
                                 <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!--Testimonial Slide-->
-                    <div class="testimonial-slide">
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-traffic-light-1"></span>
-                                </div>
-                                <h3><a href="#">Traffic Rules </a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-people-1"></span>
-                                </div>
-                                <h3><a href="#">Instructor Training</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-gearbox"></span>
-                                </div>
-                                <h3><a href="#">Highway Safety</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!--Testimonial Slide-->
-                    <div class="testimonial-slide">
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-gearbox"></span>
-                                </div>
-                                <h3><a href="#">Highway Safety</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-people-1"></span>
-                                </div>
-                                <h3><a href="#">Instructor Training</a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
-                        <!--Testimonial Block Two-->
-                        <div class="testimonial-block-two">
-                            <div class="testimonial-inner">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-traffic-light-1"></span>
-                                </div>
-                                <h3><a href="#">Traffic Rules </a></h3>
-                                <div class="text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odiomsan ipsum velit.</div>
-                            </div>
-                        </div>
+
                     </div>
                     
                 </div>

@@ -2,7 +2,7 @@
 /*
 Template Name: Homepage
 */
-get_header()
+get_header();
 ?>
 <!--Main Slider-->
 <section class="main-slider" data-start-height="550" data-slide-overlay="yes">
