@@ -31,6 +31,11 @@ if( class_exists( 'CSF' ) ) {
       'title'  => 'Options',
       'fields' => array(
         array(
+          'id'=>'banner_image',
+          'type'=>'media',
+          'title'=>'Banner Image'
+        ),
+        array(
           'id'=>'banner_message',
           'type'=>'text',
           'title'=>'Banner message'

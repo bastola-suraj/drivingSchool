@@ -125,14 +125,24 @@ function drivingschool_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'drivingschool' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'first-sidebar',
 			'description'   => esc_html__( 'Add widgets here.', 'drivingschool' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
+		),
 	);
+	register_sidebar( 
+		array(
+		'name'			=> esc_html__( 'Our Services', 'drivingschool' ),
+		'id'			=> 'our-services',
+		'description'	=> esc_html__( 'Add Services Here', 'drivingschool' ),
+		'before_widget'	=> '<section id="%1$s" class="services-section %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	), );
 }
 add_action( 'widgets_init', 'drivingschool_widgets_init' );
 
@@ -202,5 +212,12 @@ require get_template_directory() . '/cpts/banners.php';
  * Implement the Custom Meta options from Codestar.
  */
 require get_template_directory() . '/codestar/banner-options.php';
+require get_template_directory() . '/codestar/about-us-options.php';
+
+
+/**
+ * Implement Short Codes.
+ */
+require get_template_directory() . '/shortcodes/services-shortcode.php';
 
 
