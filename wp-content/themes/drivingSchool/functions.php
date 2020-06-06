@@ -45,7 +45,7 @@ if ( ! function_exists( 'drivingschool_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'drivingschool' ),
+				'menu-1'      => esc_html__( 'Primary', 'drivingschool' ),
 				'header-menu' => esc_html__( 'Header Menu', 'drivingschool' ),
 				'sticky-menu' => esc_html__( 'Sticky Menu', 'drivingschool' ),
 			)
@@ -114,6 +114,7 @@ function drivingschool_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'drivingschool_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'drivingschool_content_width', 0 );
 
 /**
@@ -133,17 +134,18 @@ function drivingschool_widgets_init() {
 			'after_title'   => '</h2>',
 		),
 	);
-	register_sidebar( 
+	register_sidebar(
 		array(
-		'name'			=> esc_html__( 'Our Services', 'drivingschool' ),
-		'id'			=> 'our-services',
-		'description'	=> esc_html__( 'Add Services Here', 'drivingschool' ),
-		'before_widget'	=> '<section id="%1$s" class="services-section %2$s">',
-		'after_widget'	=> '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	), );
+			'name'          => esc_html__( 'Our Services', 'drivingschool' ),
+			'id'            => 'our-services',
+			'description'   => esc_html__( 'Add Services Here', 'drivingschool' ),
+			'before_widget' => '<section id="%1$s" class="services-section %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		), );
 }
+
 add_action( 'widgets_init', 'drivingschool_widgets_init' );
 
 /**
@@ -158,23 +160,24 @@ function drivingschool_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_style('bootstrap.css',get_template_directory_uri().'/assets/css/bootstrap.css',array(),time(),'all');
-	wp_enqueue_style('revolution-slider.css',get_template_directory_uri().'/assets/css/revolution-slider.css',array(),time(),'all');
-	wp_enqueue_style('style.css',get_template_directory_uri().'/assets/css/style.css',array(),time(),'all');
-	wp_enqueue_style('custom.css',get_template_directory_uri().'/assets/css/custom.css',array(),time(),'all');
-	wp_enqueue_style('responsive.css',get_template_directory_uri().'/assets/css/responsive.css',array(),time(),'all');
+	wp_enqueue_style( 'bootstrap.css', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), time(), 'all' );
+	wp_enqueue_style( 'revolution-slider.css', get_template_directory_uri() . '/assets/css/revolution-slider.css', array(), time(), 'all' );
+	wp_enqueue_style( 'style.css', get_template_directory_uri() . '/assets/css/style.css', array(), time(), 'all' );
+	wp_enqueue_style( 'custom.css', get_template_directory_uri() . '/assets/css/custom.css', array(), time(), 'all' );
+	wp_enqueue_style( 'responsive.css', get_template_directory_uri() . '/assets/css/responsive.css', array(), time(), 'all' );
 
-	wp_enqueue_script( 'jquery.js', get_template_directory_uri().'/assets/js/jquery.js', array(), time(), 'true' );
-	wp_enqueue_script( 'bootstrap.min.js', get_template_directory_uri().'/assets/js/bootstrap.min.js', array(), time(), 'true' );
-	wp_enqueue_script( 'revolution.min.js', get_template_directory_uri().'/assets/js/revolution.min.js', array(), time(), 'true' );
-	wp_enqueue_script( 'jquery.fancybox.pack.js', get_template_directory_uri().'/assets/js/jquery.fancybox.pack.js', array(), time(), 'true' );
-	wp_enqueue_script( 'jquery.fancybox-media.js', get_template_directory_uri().'/assets/js/jquery.fancybox-media.js', array(), time(), 'true' );
-	wp_enqueue_script( 'owl.js', get_template_directory_uri().'/assets/js/owl.js', array(), time(), 'true' );
-	wp_enqueue_script( 'appear.js', get_template_directory_uri().'/assets/js/appear.js', array(), time(), 'true' );
-	wp_enqueue_script( 'wow.js', get_template_directory_uri().'/assets/js/wow.js', array(), time(), 'true' );
-	wp_enqueue_script( 'script.js', get_template_directory_uri().'/assets/js/script.js', array(), time(), 'true' );
-	wp_enqueue_script( 'map-script.js', get_template_directory_uri().'/assets/js/map-script.js', array(), time(), 'true' );
+	wp_enqueue_script( 'jquery.js', get_template_directory_uri() . '/assets/js/jquery.js', array(), time(), 'true' );
+	wp_enqueue_script( 'bootstrap.min.js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), time(), 'true' );
+	wp_enqueue_script( 'revolution.min.js', get_template_directory_uri() . '/assets/js/revolution.min.js', array(), time(), 'true' );
+	wp_enqueue_script( 'jquery.fancybox.pack.js', get_template_directory_uri() . '/assets/js/jquery.fancybox.pack.js', array(), time(), 'true' );
+	wp_enqueue_script( 'jquery.fancybox-media.js', get_template_directory_uri() . '/assets/js/jquery.fancybox-media.js', array(), time(), 'true' );
+	wp_enqueue_script( 'owl.js', get_template_directory_uri() . '/assets/js/owl.js', array(), time(), 'true' );
+	wp_enqueue_script( 'appear.js', get_template_directory_uri() . '/assets/js/appear.js', array(), time(), 'true' );
+	wp_enqueue_script( 'wow.js', get_template_directory_uri() . '/assets/js/wow.js', array(), time(), 'true' );
+	wp_enqueue_script( 'script.js', get_template_directory_uri() . '/assets/js/script.js', array(), time(), 'true' );
+	wp_enqueue_script( 'map-script.js', get_template_directory_uri() . '/assets/js/map-script.js', array(), time(), 'true' );
 }
+
 add_action( 'wp_enqueue_scripts', 'drivingschool_scripts' );
 
 /**
