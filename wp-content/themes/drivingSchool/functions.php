@@ -7,11 +7,6 @@
  * @package drivingSchool
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
-}
-
 if ( ! function_exists( 'drivingschool_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -143,14 +138,30 @@ add_action( 'widgets_init', 'drivingschool_widgets_init' );
  * Enqueue scripts and styles.
  */
 function drivingschool_scripts() {
-	wp_enqueue_style( 'drivingschool-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'drivingschool-style', get_stylesheet_uri(), array(), time() );
 	wp_style_add_data( 'drivingschool-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'drivingschool-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'drivingschool-navigation', get_template_directory_uri() . '/js/navigation.js', array(), time(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_style('bootstrap.css',get_template_directory_uri().'/assets/css/bootstrap.css',array(),time(),'all');
+	wp_enqueue_style('revolution-slider.css',get_template_directory_uri().'/assets/css/revolution-slider.css',array(),time(),'all');
+	wp_enqueue_style('style.css',get_template_directory_uri().'/assets/css/style.css',array(),time(),'all');
+	wp_enqueue_style('custom.css',get_template_directory_uri().'/assets/css/custom.css',array(),time(),'all');
+	wp_enqueue_style('responsive.css',get_template_directory_uri().'/assets/css/responsive.css',array(),time(),'all');
+
+	wp_enqueue_script( 'jquery.js', get_template_directory_uri().'/assets/js/jquery.js', array(), time(), 'true' );
+	wp_enqueue_script( 'bootstrap.min.js', get_template_directory_uri().'/assets/js/bootstrap.min.js', array(), time(), 'true' );
+	wp_enqueue_script( 'revolution.min.js', get_template_directory_uri().'/assets/js/revolution.min.js', array(), time(), 'true' );
+	wp_enqueue_script( 'jquery.fancybox.pack.js', get_template_directory_uri().'/assets/js/jquery.fancybox.pack.js', array(), time(), 'true' );
+	wp_enqueue_script( 'jquery.fancybox-media.js', get_template_directory_uri().'/assets/js/jquery.fancybox-media.js', array(), time(), 'true' );
+	wp_enqueue_script( 'owl.js', get_template_directory_uri().'/assets/js/owl.js', array(), time(), 'true' );
+	wp_enqueue_script( 'appear.js', get_template_directory_uri().'/assets/js/appear.js', array(), time(), 'true' );
+	wp_enqueue_script( 'wow.js', get_template_directory_uri().'/assets/js/wow.js', array(), time(), 'true' );
+	wp_enqueue_script( 'script.js', get_template_directory_uri().'/assets/js/script.js', array(), time(), 'true' );
+	wp_enqueue_script( 'map-script.js', get_template_directory_uri().'/assets/js/map-script.js', array(), time(), 'true' );
 }
 add_action( 'wp_enqueue_scripts', 'drivingschool_scripts' );
 
