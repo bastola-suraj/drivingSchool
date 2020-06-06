@@ -46,6 +46,8 @@ if ( ! function_exists( 'drivingschool_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'drivingschool' ),
+				'header-menu' => esc_html__( 'Header Menu', 'drivingschool' ),
+				'sticky-menu' => esc_html__( 'Sticky Menu', 'drivingschool' ),
 			)
 		);
 
