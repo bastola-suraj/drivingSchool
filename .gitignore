@@ -21,3 +21,4 @@ wp-settings.php
 wp-signup.php
 wp-trackback.php
 xmlrpc.php
+*/.DS_Store
