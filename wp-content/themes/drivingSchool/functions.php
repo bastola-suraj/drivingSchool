@@ -97,6 +97,7 @@ if ( ! function_exists( 'drivingschool_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+		add_theme_support('attachment-image');
 	}
 endif;
 add_action( 'after_setup_theme', 'drivingschool_setup' );

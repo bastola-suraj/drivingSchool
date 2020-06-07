@@ -118,6 +118,57 @@ get_header();
     <!--End Main Slider-->
 <?php do_shortcode( '[services_bulk]' ); ?>
 
+  <!--About Section-->
+    <!--Course Section-->
+<?php $query = new WP_Query("page_id=66"); if($query->have_posts(  )):while($query->have_posts(  )): $query->the_post() ?>
+    <section class="course-section grey-bg pt-110">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Column-->
+                <div class="content-column col-md-8 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <figure class="image wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <img src="images/resource/cource-image1.png" alt="" />
+                        </figure>
+                        <!--Content-->
+                        <div class="content">
+                            <div class="sec-title">
+                                <div class="title"><?php the_title( ); ?></div>
+                                <h2><?php the_title( ); ?></h2>
+                                <div class="separator"></div>
+                                <div class="text">
+                                    <?php the_content( ); ?>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <a href="<?php the_permalink(  ); ?>"><button type="submit" class="theme-btn btn-style-one">More</button></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Column-->
+                <div class="timing-column col-md-4 col-sm-6 col-xs-12">
+                    <div class="column-inner">
+                        <div class="title school-time">
+                            <h3>School Opening Hours</h3>
+                            <p>Monday To Sunday </p><p>&</p><p>Every friday is Holiday</p>
+                        </div>
+                        <ul>
+                            <li class="clearfix">A:<span>8:00 Am - 10:00 Am</span></li>
+                            <li class="clearfix">B :<span>10:00 Am - 12:00Pm</span></li>
+                            <li class="clearfix">C :<span>12:00Pm - 14:00 Pm</span></li>
+                            <li class="clearfix">D :<span>14:00 Pm - 16:00 Pm</span></li>
+                            <li class="clearfix">E :<span>16:00 Pm - 18:00</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endwhile; wp_reset_postdata(  ); endif; ?>
+
+    <!--End Course Section-->
+    <!--End About Section-->
 
 <?php
 get_footer();

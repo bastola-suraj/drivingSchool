@@ -30,7 +30,13 @@ if ( have_posts() ):
                     <!--Image Column-->
                     <div class="image-column col-md-6 col-sm-12 col-xs-12">
                         <div class="image wow slideInRight pt-55" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="<?php echo $about_us_image; ?>" alt=""/><br><br>
+	                        <?php 
+                            $attachment = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full',true);
+//	                        echo '<pre>';
+//	                        print_r($attachment);
+//	                        echo '</pre>';
+	                        ?>
+                            <img src="<?php echo $attachment[0] ?>" alt=""/><br><br>
                         </div>
                     </div>
                 </div>
