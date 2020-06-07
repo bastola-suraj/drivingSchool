@@ -211,11 +211,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Implement the Custom Post Types.
  */
 require get_template_directory() . '/cpts/banners.php';
+require get_template_directory() . '/cpts/instructors.php';
 
 /**
  * Implement the Custom Meta options from Codestar.
  */
 require get_template_directory() . '/codestar/banner-options.php';
+require get_template_directory() . '/codestar/instructor-options.php';
 require get_template_directory() . '/codestar/about-us-options.php';
 
 

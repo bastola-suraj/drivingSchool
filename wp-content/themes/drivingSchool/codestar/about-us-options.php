@@ -35,6 +35,16 @@ if ( class_exists( 'CSF' ) ) {
 		),
 	) );
 	CSF::createSection( $prefix, array(
+		'title'  => 'Opening Hours',
+		'fields' => array(
+			array(
+				'id'    => 'about_us_image',
+				'type'  => 'media',
+				'title' => 'Image'
+			),
+		),
+	) );
+	CSF::createSection( $prefix, array(
 		'title'  => 'Our Services',
 		'fields' => array(
 			array(

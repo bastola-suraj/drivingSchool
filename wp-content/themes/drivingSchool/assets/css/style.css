@@ -4418,8 +4418,8 @@ img{
 
 .course-section .image{
 	position:absolute;
-	right:100%;
-	bottom:-15px;
+	right: 90%;
+	bottom: 20px;
 	margin-right:50px;
 }
 
@@ -5792,4 +5792,8 @@ img{
 .comment-form button{
 	font-size:16px;
 	padding:10px 41px 10px;
+}
+
+.column-inner {
+	margin-top: 60px;
 }

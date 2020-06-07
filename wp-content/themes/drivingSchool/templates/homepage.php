@@ -28,11 +28,12 @@ get_header();
 							// $banner_see_pricing_switcher = $banner_options['banner_see_pricing_switcher'];
 							$banner_see_pricing_button_url  = $banner_options['banner_see_pricing_button_url'];
 							$banner_see_pricing_button_text = $banner_options['banner_see_pricing_button_text'];
+							$attachment                     = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true );
 							?>
                             <li data-transition="fade" data-slotamount="1" data-masterspeed="1000"
-                                data-thumb="<?php echo $banner_image ?>" data-saveperformance="off"
+                                data-thumb="<?php echo $attachment[0]; ?>" data-saveperformance="off"
                                 data-title="Awesome Title Here">
-                                <img src="<?php echo $banner_image ?>" alt="" data-bgposition="center top"
+                                <img src="<?php echo $attachment[0]; ?>" alt="" data-bgposition="center top"
                                      data-bgfit="cover" data-bgrepeat="no-repeat">
 
                                 <div class="tp-caption sfl sfb tp-resizeme"
@@ -118,57 +119,150 @@ get_header();
     <!--End Main Slider-->
 <?php do_shortcode( '[services_bulk]' ); ?>
 
-  <!--About Section-->
+    <!--About Section-->
     <!--Course Section-->
-<?php $query = new WP_Query("page_id=66"); if($query->have_posts(  )):while($query->have_posts(  )): $query->the_post() ?>
-    <section class="course-section grey-bg pt-110">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <!--Column-->
-                <div class="content-column col-md-8 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <figure class="image wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="images/resource/cource-image1.png" alt="" />
-                        </figure>
-                        <!--Content-->
-                        <div class="content">
-                            <div class="sec-title">
-                                <div class="title"><?php the_title( ); ?></div>
-                                <h2><?php the_title( ); ?></h2>
-                                <div class="separator"></div>
-                                <div class="text">
-                                    <?php the_content( ); ?>
+    <section class="course-section grey-bg pt-10">
+		<?php $query = new WP_Query( "page_id=66" );
+		if ( $query->have_posts() ):while ( $query->have_posts() ): $query->the_post() ?>
+
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <!--Column-->
+                    <div class="content-column col-md-8 col-sm-6 col-xs-12">
+                        <div class="inner-box">
+                            <figure class="image wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<?php $attachment = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true ); ?>
+                                <img src="<?php echo $attachment[0] ?>" alt=""/>
+                            </figure>
+                            <!--Content-->
+                            <div class="content">
+                                <div class="sec-title">
+                                    <div class="title"><?php the_title(); ?></div>
+                                    <h2><?php the_title(); ?></h2>
+                                    <div class="separator"></div>
+                                    <div class="text">
+										<?php the_content(); ?>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <button type="submit" class="theme-btn btn-style-one">More</button>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <a href="<?php the_permalink(  ); ?>"><button type="submit" class="theme-btn btn-style-one">More</button></a>
-                                </div>
                         </div>
                     </div>
-                </div>
-                <!--Column-->
-                <div class="timing-column col-md-4 col-sm-6 col-xs-12">
-                    <div class="column-inner">
-                        <div class="title school-time">
-                            <h3>School Opening Hours</h3>
-                            <p>Monday To Sunday </p><p>&</p><p>Every friday is Holiday</p>
+                    <!--Column-->
+                    <div class="timing-column col-md-4 col-sm-6 col-xs-12" style="margin-top: 20px;">
+                        <div class="column-inner">
+                            <div class="title school-time">
+                                <h3>School Opening Hours</h3>
+                                <p>Monday To Sunday </p>
+                                <p>&</p>
+                                <p>Every friday is Holiday</p>
+                            </div>
+                            <ul>
+                                <li class="clearfix">A:<span>8:00 Am - 10:00 Am</span></li>
+                                <li class="clearfix">B :<span>10:00 Am - 12:00Pm</span></li>
+                                <li class="clearfix">C :<span>12:00Pm - 14:00 Pm</span></li>
+                                <li class="clearfix">D :<span>14:00 Pm - 16:00 Pm</span></li>
+                                <li class="clearfix">E :<span>16:00 Pm - 18:00</span></li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li class="clearfix">A:<span>8:00 Am - 10:00 Am</span></li>
-                            <li class="clearfix">B :<span>10:00 Am - 12:00Pm</span></li>
-                            <li class="clearfix">C :<span>12:00Pm - 14:00 Pm</span></li>
-                            <li class="clearfix">D :<span>14:00 Pm - 16:00 Pm</span></li>
-                            <li class="clearfix">E :<span>16:00 Pm - 18:00</span></li>
-                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
+		<?php endwhile;
+			wp_reset_postdata(); endif; ?>
+
     </section>
-<?php endwhile; wp_reset_postdata(  ); endif; ?>
 
     <!--End Course Section-->
     <!--End About Section-->
+
+    <!--Team Section-->
+    <section class="team-section">
+        <div class="auto-container">
+            <!--Sec Title-->
+            <div class="sec-title centered">
+                <div class="title">Our Great Team</div>
+                <h2>Our Instructors</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="two-item-carousel owl-carousel owl-theme">
+				<?php
+				$args  = array(
+					'post_type' => 'instructors',
+				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ):
+					while ( $query->have_posts() ):
+						$query->the_post();
+						$instructor_options = get_post_meta( get_the_ID(), 'instructor_options', true );
+//						echo '<pre>';
+//						print_r( $instructor_options );
+//						echo '</pre>';
+						$instructor_position    = $instructor_options['instructor_position'];
+						$instructor_social      = $instructor_options['instructor_social'];
+						$instructor_facebook    = $instructor_options['instructor_facebook'];
+						$instructor_twitter     = $instructor_options['instructor_twitter'];
+						$instructor_linked_in   = $instructor_options['instructor_linked_in'];
+						$instructor_dribble     = $instructor_options['instructor_dribble'];
+						$instructor_google_plus = $instructor_options['instructor_google_plus'];
+						$attachment             = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true );
+
+						?>
+                        <!-- Team Member -->
+                        <div class="team-member">
+                            <div class="inner-box">
+                                <div class="row clearfix">
+                                    <! -- Image Column -- >
+                                    <div class="image-column col-md-6 col-sm-6 col-xs-12">
+                                        <div class="image">
+                                            <img src="<?php echo $attachment[0]; ?>" alt=""/>
+                                        </div>
+                                    </div>
+                                    <! -- Content Column -- >
+                                    <div class="content-column col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inner-content">
+                                            <h3><a href="<?php the_permalink(); ?>"> <?php the_title() ?> </a></h3>
+                                            <div class="designation"> <?php echo $instructor_position; ?></div>
+                                            <div class="separator"></div>
+                                            <div class="text"> <?php the_content() ?></div>
+											<?php if ( 1 == $instructor_social ): ?>
+                                                <ul class="social-links-one">
+													<?php if ( !empty( $instructor_facebook ) ): ?>
+                                                        <li><a href="<?php echo $instructor_facebook; ?>"><span class="fa fa-facebook"></span></a></li>
+													<?php endif; ?>
+	                                                <?php if ( !empty( $instructor_twitter ) ): ?>
+                                                        <li><a href="<?php echo $instructor_twitter?>"><span class="fa fa-twitter"></span></a></li>
+	                                                <?php endif; ?>
+	                                                <?php if ( !empty( $instructor_linked_in ) ): ?>
+                                                        <li><a href="<?php echo $instructor_linked_in; ?>"><span class="fa fa-linkedin"></span></a></li>
+	                                                <?php endif; ?>
+	                                                <?php if ( !empty( $instructor_google_plus ) ): ?>
+                                                        <li><a href="<?php echo $instructor_google_plus; ?>"><span class="fa fa-google-plus"></span></a></li>
+	                                                <?php endif; ?>
+                                                </ul>
+											<?php else: ?>
+											<?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member -->
+					<?php
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
+
+            </div>
+        </div>
+    </section>
+    <! -- End Team Section -- >
 
 <?php
 get_footer();
