@@ -31,39 +31,39 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => 'Options',
 		'fields' => array(
 			array(
-				'id'    => 'testimonial_position',
+				'id'    => 'testimonial_address',
 				'type'  => 'text',
-				'title' => 'Testimonial Position'
+				'title' => 'Address'
 			),
-			array(
-				'id'    => 'testimonial_social',
-				'type'  => 'switcher',
-				'title' => 'Testimonial Social Accounts'
-			),
-			array(
-				'id'    => 'testimonial_facebook',
-				'type'  => 'text',
-				'title' => 'Facebook',
-				'dependency'=>array('testimonial_social','==','true'),
-			),
-			array(
-				'id'    => 'testimonial_twitter',
-				'type'  => 'text',
-				'title' => 'Twitter',
-				'dependency'=>array('testimonial_social','==','true'),
-			),
-			array(
-				'id'    => 'testimonial_linked_in',
-				'type'  => 'text',
-				'title' => 'Linked In',
-				'dependency'=>array('testimonial_social','==','true'),
-			),
-			array(
-				'id'    => 'testimonial_google_plus',
-				'type'  => 'text',
-				'title' => 'Google Plus',
-				'dependency'=>array('testimonial_social','==','true'),
-			),
+//			array(
+//				'id'    => 'testimonial_social',
+//				'type'  => 'switcher',
+//				'title' => 'Testimonial Social Accounts'
+//			),
+//			array(
+//				'id'    => 'testimonial_facebook',
+//				'type'  => 'text',
+//				'title' => 'Facebook',
+//				'dependency'=>array('testimonial_social','==','true'),
+//			),
+//			array(
+//				'id'    => 'testimonial_twitter',
+//				'type'  => 'text',
+//				'title' => 'Twitter',
+//				'dependency'=>array('testimonial_social','==','true'),
+//			),
+//			array(
+//				'id'    => 'testimonial_linked_in',
+//				'type'  => 'text',
+//				'title' => 'Linked In',
+//				'dependency'=>array('testimonial_social','==','true'),
+//			),
+//			array(
+//				'id'    => 'testimonial_google_plus',
+//				'type'  => 'text',
+//				'title' => 'Google Plus',
+//				'dependency'=>array('testimonial_social','==','true'),
+//			),
 		),
 	) );
 

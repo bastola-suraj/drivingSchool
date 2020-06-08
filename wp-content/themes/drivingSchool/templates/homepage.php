@@ -287,25 +287,40 @@ get_header();
                 <div class="content-column col-md-7 col-sm-12 col-xs-12">
                     <div class="inner-box">
                         <div class="single-item-carousel owl-theme owl-carousel">
+							<?php
+							$args  = array(
+								'post_type' => 'testimonials',
+							);
+							$query = new WP_Query( $args );
+							if ( $query->have_posts() ):
+								while ( $query->have_posts() ):
+									$query->the_post();
+									$testimonial_options = get_post_meta( get_the_ID(), 'testimonial_options', true );
+									$testimonial_address = $testimonial_options['testimonial_address'];
+									?>
+                                    <!--Testimonial Block Three-->
+                                    <div class="testimonial-block-three">
+                                        <div class="inner">
+                                            <div class="quote-icon"><span class="icon flaticon-left-quote"></span></div>
+                                            <div class="text"><?php the_content(); ?></div>
+                                            <div class="author-info">
+												<?php
+												$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true );
 
-                            <!--Testimonial Block Three-->
-                            <div class="testimonial-block-three">
-                                <div class="inner">
-                                    <div class="quote-icon"><span class="icon flaticon-left-quote"></span></div>
-                                    <div class="text"><?php the_content(); ?></div>
-                                    <div class="author-info">
-										<?php
-										$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true );
-
-										?>
-                                        <div class="author-image"><img src="<?php echo $attachment[0]; ?>" alt=""/>
+												?>
+                                                <div class="author-image"><img src="<?php echo $attachment[0]; ?>"
+                                                                               alt=""/>
+                                                </div>
+                                                <h3><a href="instructor-detail.html"><?php the_title() ?></a></h3>
+                                                <div class="designation"><?php echo $testimonial_address; ?></div>
+                                            </div>
                                         </div>
-                                        <h3><a href="instructor-detail.html"><?php the_title() ?></a></h3>
-                                        <div class="designation">Saitama Ken</div>
                                     </div>
-                                </div>
-                            </div>
-
+								<?php
+								endwhile;
+								wp_reset_postdata();
+							endif;
+							?>
                         </div>
                     </div>
                 </div>

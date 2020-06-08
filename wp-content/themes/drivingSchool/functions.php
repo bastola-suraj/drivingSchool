@@ -219,6 +219,7 @@ require get_template_directory() . '/cpts/testimonials.php';
  */
 require get_template_directory() . '/codestar/banner-options.php';
 require get_template_directory() . '/codestar/instructor-options.php';
+require get_template_directory() . '/codestar/testimonial-options.php';
 require get_template_directory() . '/codestar/about-us-options.php';
 
 
