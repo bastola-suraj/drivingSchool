@@ -212,6 +212,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/cpts/banners.php';
 require get_template_directory() . '/cpts/instructors.php';
+require get_template_directory() . '/cpts/testimonials.php';
 
 /**
  * Implement the Custom Meta options from Codestar.

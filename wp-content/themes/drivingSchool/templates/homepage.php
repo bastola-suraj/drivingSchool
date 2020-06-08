@@ -231,18 +231,22 @@ get_header();
                                             <div class="text"> <?php the_content() ?></div>
 											<?php if ( 1 == $instructor_social ): ?>
                                                 <ul class="social-links-one">
-													<?php if ( !empty( $instructor_facebook ) ): ?>
-                                                        <li><a href="<?php echo $instructor_facebook; ?>"><span class="fa fa-facebook"></span></a></li>
+													<?php if ( ! empty( $instructor_facebook ) ): ?>
+                                                        <li><a href="<?php echo $instructor_facebook; ?>"><span
+                                                                        class="fa fa-facebook"></span></a></li>
 													<?php endif; ?>
-	                                                <?php if ( !empty( $instructor_twitter ) ): ?>
-                                                        <li><a href="<?php echo $instructor_twitter?>"><span class="fa fa-twitter"></span></a></li>
-	                                                <?php endif; ?>
-	                                                <?php if ( !empty( $instructor_linked_in ) ): ?>
-                                                        <li><a href="<?php echo $instructor_linked_in; ?>"><span class="fa fa-linkedin"></span></a></li>
-	                                                <?php endif; ?>
-	                                                <?php if ( !empty( $instructor_google_plus ) ): ?>
-                                                        <li><a href="<?php echo $instructor_google_plus; ?>"><span class="fa fa-google-plus"></span></a></li>
-	                                                <?php endif; ?>
+													<?php if ( ! empty( $instructor_twitter ) ): ?>
+                                                        <li><a href="<?php echo $instructor_twitter ?>"><span
+                                                                        class="fa fa-twitter"></span></a></li>
+													<?php endif; ?>
+													<?php if ( ! empty( $instructor_linked_in ) ): ?>
+                                                        <li><a href="<?php echo $instructor_linked_in; ?>"><span
+                                                                        class="fa fa-linkedin"></span></a></li>
+													<?php endif; ?>
+													<?php if ( ! empty( $instructor_google_plus ) ): ?>
+                                                        <li><a href="<?php echo $instructor_google_plus; ?>"><span
+                                                                        class="fa fa-google-plus"></span></a></li>
+													<?php endif; ?>
                                                 </ul>
 											<?php else: ?>
 											<?php endif; ?>
@@ -262,7 +266,53 @@ get_header();
             </div>
         </div>
     </section>
-    <! -- End Team Section -- >
+    <!-- End Team Section -->
+    <!--Testimonial Section-->
+    <section class="testimonial-section" style="background-image:url(images/background/2.jpg);">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Title Column-->
+                <div class="title-column col-md-5 col-sm-12 col-xs-12">
+                    <!--Sec Title-->
+                    <div class="sec-title light">
+                        <div class="title">Customer Feedback</div>
+                        <h2>Testimonials</h2>
+                        <div class="separator"></div>
+                        <div class="text">Sathyame vijayate.
+                        </div>
+                    </div>
+
+                </div>
+                <!--Content Column-->
+                <div class="content-column col-md-7 col-sm-12 col-xs-12">
+                    <div class="inner-box">
+                        <div class="single-item-carousel owl-theme owl-carousel">
+
+                            <!--Testimonial Block Three-->
+                            <div class="testimonial-block-three">
+                                <div class="inner">
+                                    <div class="quote-icon"><span class="icon flaticon-left-quote"></span></div>
+                                    <div class="text"><?php the_content(); ?></div>
+                                    <div class="author-info">
+										<?php
+										$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', true );
+
+										?>
+                                        <div class="author-image"><img src="<?php echo $attachment[0]; ?>" alt=""/>
+                                        </div>
+                                        <h3><a href="instructor-detail.html"><?php the_title() ?></a></h3>
+                                        <div class="designation">Saitama Ken</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Testimonial Section-->
 
 <?php
 get_footer();
