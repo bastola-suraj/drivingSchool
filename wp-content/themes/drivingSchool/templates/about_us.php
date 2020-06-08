@@ -36,7 +36,7 @@ if ( have_posts() ):
 //	                        print_r($attachment);
 //	                        echo '</pre>';
 	                        ?>
-                            <img src="<?php echo $attachment[0] ?>" alt=""/><br><br>
+                            <img src="<?php echo $attachment[0] ?>" alt=""/><br><br><br><br>
                         </div>
                     </div>
                 </div>
